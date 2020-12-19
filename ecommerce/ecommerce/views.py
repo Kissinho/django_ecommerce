@@ -1,4 +1,3 @@
-
 from django.http import HttpResponse
 from django.shortcuts import render
 def home_page(request):
@@ -20,4 +19,6 @@ def contact_page(request):
         "title": "Página de contato",
         "content": "Bem-vindo a página de contato"
     }
+    if request.method == "POST":
+        print(request.POST)
     return render(request, "contact/view.html", context)
